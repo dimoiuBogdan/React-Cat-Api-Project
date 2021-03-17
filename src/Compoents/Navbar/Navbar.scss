@@ -1,0 +1,17 @@
+$dark-blue: #3d405b;
+$nice-yellow: #fca311;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h3 {
+    font-size: 1.4rem;
+    transition: 0.3s all;
+    &:hover {
+      transform: scale(1.1);
+      color: $nice-yellow;
+      cursor: pointer;
+    }
+  }
+}

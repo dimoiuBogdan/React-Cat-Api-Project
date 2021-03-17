@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Container } from "@material-ui/core";
+import Navbar from "./Compoents/Navbar/Navbar";
+import "./App.scss";
+import Random from "./Compoents/Random/Random";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Container maxWidth="md" className="container">
+        <Navbar />
+        <Random />
+      </Container>
     </div>
   );
 }
-
-export default App;
+// 5b2c5f99-a670-46e8-b959-5151560e4428

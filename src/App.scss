@@ -1,0 +1,12 @@
+$dark-blue: #3d405b;
+$nice-yellow: #fca311;
+
+.app {
+  width: 100vw;
+  background: $dark-blue;
+  .container {
+    min-height: 100vh;
+    color: white;
+    width: 100vw;
+  }
+}
