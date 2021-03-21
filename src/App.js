@@ -9,6 +9,7 @@ import Favorites from "./Compoents/Favorites/Favorites";
 
 export default function App() {
   const [favorites, setFavorites] = useState([]);
+  const [catDetails, setCatDetails] = useState({});
 
   return (
     <Router>
@@ -20,13 +21,20 @@ export default function App() {
               path="/"
               exact
               component={() => (
-                <Random favorites={favorites} setFavorites={setFavorites} />
+                <Random
+                  catDetails={catDetails}
+                  favorites={favorites}
+                  setFavorites={setFavorites}
+                  setCatDetails={setCatDetails}
+                />
               )}
             />
             <Route path="/search" component={Search} />
             <Route
               path="/favorites"
-              component={() => <Favorites favorites={favorites} />}
+              component={() => (
+                <Favorites favorites={favorites} setFavorites={setFavorites} />
+              )}
             />
           </Switch>
         </Container>
