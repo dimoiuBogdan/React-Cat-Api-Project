@@ -1,19 +1,33 @@
 import React, { useState } from "react";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import Button from "@material-ui/core/Button";
 import "./Random.scss";
 import axios from "axios";
-export default function Random() {
+
+export default function Random(props) {
   const [catDetails, setCatDetails] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const fetchRandomImage = () => {
-    axios.get("https://api.thecatapi.com/v1/images/search").then((res) => {
-      const data = res.data[0];
-      setCatDetails({
-        id: data.id,
-        url: data.url,
+    if (!loading) {
+      setLoading(true);
+      axios.get("https://api.thecatapi.com/v1/images/search").then((res) => {
+        const data = res.data[0];
+        setCatDetails({
+          id: data.id,
+          url: data.url,
+        });
       });
-      console.log(data);
-    });
+      setLoading(false);
+    }
+  };
+
+  const addToFav = () => {
+    props.setFavorites([
+      ...props.favorites,
+      { id: catDetails.id, url: catDetails.url },
+    ]);
+    console.log(catDetails.url, loading);
   };
 
   return (
@@ -26,11 +40,15 @@ export default function Random() {
       >
         Random Cat
       </Button>
-      {catDetails.url ? (
+      {catDetails.url && loading === false ? (
         <div className="cat-details">
           <img src={catDetails.url} alt="random-cat" />
-          <p>{catDetails.id}</p>
+          <div className="icon">
+            <FavoriteBorderIcon onClick={addToFav} />
+          </div>
         </div>
+      ) : loading ? (
+        <h2>Loading...</h2>
       ) : (
         <h2>Press The Button To Get A Cat</h2>
       )}

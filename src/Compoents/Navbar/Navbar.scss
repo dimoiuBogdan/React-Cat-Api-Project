@@ -5,13 +5,28 @@ $nice-yellow: #fca311;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 3vh;
   h3 {
     font-size: 1.4rem;
     transition: 0.3s all;
+    color: white;
     &:hover {
-      transform: scale(1.1);
       color: $nice-yellow;
       cursor: pointer;
     }
+  }
+  .selected {
+    color: $nice-yellow;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    a {
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  }
+  img {
+    height: 100px;
   }
 }
