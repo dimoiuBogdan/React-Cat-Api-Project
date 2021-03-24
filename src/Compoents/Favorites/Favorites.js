@@ -1,21 +1,19 @@
 import React from "react";
 import "../Favorites/Favorites.scss";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+
+import Favorite from "../Favorite/Favorite";
 
 export default function Favorites(props) {
-  const removeFromFavorites = (e) => {};
-
   return (
     <div className="favorite-cats">
       {props.favorites.map((favorite) => (
-        <div className="favorite-cat-wrap">
-          <div className="favorite-cat" key={favorite.id}>
-            <img src={favorite.url} alt="cat" />
-            <div className="icon">
-              <FavoriteBorderIcon onClick={removeFromFavorites} />
-            </div>
-          </div>
-        </div>
+        <Favorite
+          setFavorites={props.setFavorites}
+          favorites={props.favorites}
+          key={favorite.id}
+          id={favorite.id}
+          url={favorite.url}
+        />
       ))}
     </div>
   );
