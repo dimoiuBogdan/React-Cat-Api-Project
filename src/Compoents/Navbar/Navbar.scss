@@ -10,12 +10,13 @@ $nice-yellow: #fca311;
     font-size: 1.4rem;
     transition: 0.3s all;
     color: white;
+    margin: 0 10px;
     &:hover {
       color: $nice-yellow;
       cursor: pointer;
     }
   }
-  .selected {
+  .selected h3 {
     color: $nice-yellow;
   }
   .menu {
@@ -23,10 +24,26 @@ $nice-yellow: #fca311;
     align-items: center;
     a {
       text-decoration: none;
-      margin: 0 10px;
     }
   }
   img {
     height: 100px;
+  }
+  .dropdown {
+    text-align: center;
+    position: relative;
+    .hidden {
+      position: absolute;
+      width: 100%;
+      h3 {
+        margin: 0;
+        text-align: center;
+      }
+    }
+  }
+  .breeds {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

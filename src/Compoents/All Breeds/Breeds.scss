@@ -1,0 +1,12 @@
+$dark-blue: #3d405b;
+$nice-yellow: #fca311;
+
+.breeds-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  .breed {
+    width: 45%;
+  }
+}

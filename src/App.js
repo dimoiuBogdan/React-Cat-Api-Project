@@ -4,8 +4,9 @@ import Navbar from "./Compoents/Navbar/Navbar";
 import "./App.scss";
 import Random from "./Compoents/Random/Random";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Search from "./Compoents/Search/Search";
+import SearchBreeds from "./Compoents/Search/SearchBreeds";
 import Favorites from "./Compoents/Favorites/Favorites";
+import Breeds from "./Compoents/All Breeds/Breeds";
 
 export default function App() {
   const [favorites, setFavorites] = useState([]);
@@ -14,7 +15,7 @@ export default function App() {
   return (
     <Router>
       <div className="app">
-        <Container maxWidth="md" className="container">
+        <Container maxWidth="lg" className="container">
           <Navbar />
           <Switch>
             <Route
@@ -29,7 +30,7 @@ export default function App() {
                 />
               )}
             />
-            <Route path="/search" component={Search} />
+            <Route path="/breeds/all" component={Breeds} />
             <Route
               path="/favorites"
               component={() => (
