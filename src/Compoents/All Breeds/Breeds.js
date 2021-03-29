@@ -28,6 +28,18 @@ export default function Breeds() {
       });
   };
 
+  const escFunction = (e) => {
+    if (e.keyCode === 27) setDisplayPopup(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", escFunction, false);
+
+    return () => {
+      document.removeEventListener("keydown", escFunction, false);
+    };
+  }, []);
+
   const togglePopup = () => {
     setDisplayPopup(!displayPopup);
   };
@@ -37,8 +49,14 @@ export default function Breeds() {
       {!loading ? (
         breeds.map((breed) =>
           breed.image ? (
-            <div className="breed" onClick={togglePopup} key={breed.id}>
+            <div
+              className="breed"
+              onKeyPress={escFunction}
+              onClick={togglePopup}
+              key={breed.id}
+            >
               <Breed
+                clickedCat={clickedCat}
                 setClickedCat={setClickedCat}
                 breeds={breeds}
                 id={breed.id}
@@ -57,7 +75,7 @@ export default function Breeds() {
       )}
       {displayPopup ? (
         <div className="popup" onClick={togglePopup}>
-          <BreedPopup />
+          <BreedPopup clickedCat={clickedCat} />
         </div>
       ) : null}
     </div>

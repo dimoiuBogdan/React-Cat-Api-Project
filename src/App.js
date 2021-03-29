@@ -4,7 +4,6 @@ import Navbar from "./Compoents/Navbar/Navbar";
 import "./App.scss";
 import Random from "./Compoents/Random/Random";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SearchBreeds from "./Compoents/Search/SearchBreeds";
 import Favorites from "./Compoents/Favorites/Favorites";
 import Breeds from "./Compoents/All Breeds/Breeds";
 
@@ -30,7 +29,7 @@ export default function App() {
                 />
               )}
             />
-            <Route path="/breeds/all" component={Breeds} />
+            <Route path="/breeds" component={Breeds} />
             <Route
               path="/favorites"
               component={() => (
