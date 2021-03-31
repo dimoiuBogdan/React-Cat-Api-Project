@@ -22,12 +22,18 @@ $nice-yellow: #fca311;
       object-position: center center;
     }
     .image {
-      width: 50%;
+      width: 40%;
     }
     .right-section {
       background: rgba(0, 0, 0, 0.3);
       width: 60%;
       padding: 5px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        margin: 5px 0;
+      }
       h3 {
         margin: 0;
         text-align: center;
@@ -55,6 +61,22 @@ $nice-yellow: #fca311;
         align-items: center;
         .MuiSvgIcon-root {
           padding-top: 3px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .breed-card-wrap {
+    .breed-card {
+      height: fit-content;
+      flex-direction: column;
+      .right-section,
+      .image {
+        width: 100%;
+        img {
+          height: 200px;
         }
       }
     }

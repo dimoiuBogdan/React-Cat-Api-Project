@@ -42,3 +42,15 @@ $nice-yellow: #fca311;
     }
   }
 }
+
+@media (max-width: 796px) {
+  .favorite-cat-wrap {
+    width: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .favorite-cat-wrap {
+    width: 100%;
+  }
+}

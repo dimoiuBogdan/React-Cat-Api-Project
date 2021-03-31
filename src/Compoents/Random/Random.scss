@@ -2,6 +2,7 @@ $dark-blue: #3d405b;
 $nice-yellow: #fca311;
 
 .random {
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +23,7 @@ $nice-yellow: #fca311;
     text-align: center;
     position: relative;
     img {
-      height: 600px;
+      height: 70vh;
       width: 700px;
       object-fit: cover;
       object-position: center;
@@ -51,6 +52,20 @@ $nice-yellow: #fca311;
     }
     &:hover .icon {
       opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .cat-details {
+    img {
+      width: 100% !important;
+    }
+  }
+  .new-button {
+    &:hover {
+      background: $nice-yellow;
+      color: white;
     }
   }
 }

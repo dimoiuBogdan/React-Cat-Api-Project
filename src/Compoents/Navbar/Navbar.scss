@@ -46,4 +46,80 @@ $nice-yellow: #fca311;
     align-items: center;
     justify-content: center;
   }
+  .close-menu-overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    &.hidden {
+      display: none;
+    }
+  }
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  .line {
+    background-color: $nice-yellow;
+    height: 3px;
+    border-radius: 20px;
+    margin: 6px 0;
+    width: 40px;
+    display: block;
+    margin-left: auto;
+    transition: 0.3s all;
+  }
+  .line-3 {
+    width: 50%;
+  }
+  .line-2 {
+    width: 75%;
+  }
+  &.active {
+    .line-3,
+    .line-2 {
+      width: 100% !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    .logo {
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    .menu {
+      position: fixed;
+      height: 100%;
+      width: 35%;
+      min-width: 220px;
+      border-left: 3px solid $nice-yellow;
+      right: 0;
+      z-index: 3;
+      top: 0;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      transition: 1s all;
+      h3 {
+        font-size: 2rem;
+      }
+      &.hidden {
+        right: -70%;
+      }
+    }
+  }
+  .hamburger-menu {
+    display: block;
+    z-index: 4;
+  }
 }

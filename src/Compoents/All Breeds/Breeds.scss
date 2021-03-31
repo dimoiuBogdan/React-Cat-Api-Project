@@ -19,3 +19,20 @@ $nice-yellow: #fca311;
   font-size: 1.1rem;
   margin-bottom: 20px;
 }
+.pagination {
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+  .breed {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .MuiPagination-ul button {
+    font-size: 0.9rem !important;
+    margin: 0px -1px;
+    margin-bottom: 10px;
+  }
+}

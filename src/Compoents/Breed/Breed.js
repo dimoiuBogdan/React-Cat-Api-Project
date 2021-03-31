@@ -33,7 +33,7 @@ export default function Breed(props) {
           <h3>{props.catName}</h3>
           <p className="origin">Origin: {props.origin}</p>
           <p className="description">
-            Description: {props.description.split(" ").splice(0, 12).join(" ")}
+            Description: {props.description.split(" ").splice(0, 8).join(" ")}
             ...
           </p>
           <p className="cfa">
